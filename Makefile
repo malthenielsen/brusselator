@@ -1,11 +1,12 @@
 gcc_flags= -fopenmp -g -lm -pthread -O3 -Wall -Wextra -pedantic
 
-EXE=bruss
+EXE=gillespie
 
 SRC=$(EXE).cpp
 
 run: $(EXE)
 	./$(EXE)
+	python analyse_gil.py
 
 
 $(EXE): $(SRC)
